@@ -2,11 +2,11 @@
 const mongoose  = require('mongoose');
 //Username :abhishek801503gupta
 // Password : mongooseBD
-mongoose.connect("mongodb+srv://abhishek801503gupta:<db_password>@cluster0.ml6dk8w.mongodb.net/")
+mongoose.connect("mongodb+srv://abhishek801503gupta:mongooseBD@cluster0.ml6dk8w.mongodb.net/CourseSelling_Backend")
 // mongoose.connect("")
 
 const Schema = mongoose.Schema;
-const ObjectId = mongoose.type.ObjectId;
+const ObjectId = mongoose.Types.ObjectId;
 
 const userSchema = new Schema({
     email:{type: String , unique: true},
@@ -41,7 +41,7 @@ const adminModel = mongoose.model("admin" , adminSchema);
 const courseModel = mongoose.model("courses" , courseSchema);
 const purchaseModel = mongoose.model("purchase" , purchaseSchema);
 
-model.exports = {
+module.exports = {
     userModel,
     adminModel,
     courseModel,

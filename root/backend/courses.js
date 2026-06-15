@@ -1,3 +1,5 @@
+const {userModel , adminModel , courseModel , purcheseModel} = require("./Model");
+
 function createCourseRoutes(app){
     
 app.post("/course/purchase" , (req, res)=>{});

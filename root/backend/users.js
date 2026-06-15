@@ -1,3 +1,4 @@
+const {userModel , adminModel , courseModel , purcheseModel} = require("./Model");
 
 function createUserRoutes(app){
     
@@ -15,7 +16,7 @@ app.post("/users/signup" , async(req, res)=>{
             email:email,
             firstName:firstName,
             lastName:lastName,
-            password:userPassword
+            password:Password
         })
     }else{
         res.status(411).json({
@@ -49,7 +50,7 @@ app.post("/users/signin" , async (req, res)=>{
 
 })
 
-app.get("/users/purches" , auth , (req , res)=>{
+app.get("/users/purches"  , (req , res)=>{
 
 })
 }
