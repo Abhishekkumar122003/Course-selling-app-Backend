@@ -22,3 +22,15 @@ const adminSchema = new Schema({
     password:String
 })
 
+const courseSchema = new Schema({
+    title: String,
+    description: String,
+    createrId:ObjectId,
+    imageUrl:String,
+    price:Number
+})
+
+const purchase = new Schema({
+    ownerId:ObjectId,
+    courseId:[ObjectId]
+})

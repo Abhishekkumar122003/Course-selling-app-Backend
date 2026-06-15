@@ -1,2 +1,2 @@
-const  = require("jsonwebtoken");
-const 
+const json = require("jsonwebtoken");
+const SECRET = "dbviwuwfwefeedc"
