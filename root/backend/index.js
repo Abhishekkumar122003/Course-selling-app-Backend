@@ -59,4 +59,4 @@ app.post("/signin" , async (req, res)=>{
 
 app.post("/purchase" , (req, res)=>{});
 
-app
+app.listen(3000);
