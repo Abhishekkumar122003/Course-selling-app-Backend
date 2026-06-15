@@ -1,8 +1,5 @@
 // for schema of our DataBase
 const mongoose  = require('mongoose');
-//Username :abhishek801503gupta
-// Password : mongooseBD
-mongoose.connect("mongodb+srv://abhishek801503gupta:<db_password>@cluster0.ml6dk8w.mongodb.net/")
 // mongoose.connect("")
 
 const Schema = mongoose.Schema;
