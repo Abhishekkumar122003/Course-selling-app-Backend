@@ -1,8 +1,6 @@
 // for schema of our DataBase
 const mongoose  = require('mongoose');
-//Username :abhishek801503gupta
-// Password : mongooseBD
-mongoose.connect("mongodb+srv://abhishek801503gupta:<db_password>@cluster0.ml6dk8w.mongodb.net/")
+mongoose.connect("")
 
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.type.ObjectId;
@@ -30,7 +28,19 @@ const courseSchema = new Schema({
     price:Number
 })
 
-const purchase = new Schema({
+const purchaseSchema = new Schema({
     ownerId:ObjectId,
     courseId:[ObjectId]
 })
+
+const userModel = mongoose.model("users" , userSchema);
+const adminModel = mongoose.model("admin" , adminSchema);
+const courseModel = mongoose.model("courses" , courseSchema);
+const purchaseModel = mongoose.model("purchase" , purchaseSchema);
+
+model.exports = {
+    userModel,
+    adminModel,
+    courseModel,
+    purchaseModel
+}

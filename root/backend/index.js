@@ -7,10 +7,11 @@ app.use(express.json());
 
 app.get("/" , (req, res)=>{});
 
-app.post("/signup" , (req, res)=>{
+app.post("/signup" , async(req, res)=>{
     const userName = req.body.userName;
     const userPassword = req.body.userPassword;
     
+
 })
 app.post("/signin" , (req, res)=>{})
 

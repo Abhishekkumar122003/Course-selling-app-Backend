@@ -1,2 +1,6 @@
 const json = require("jsonwebtoken");
-const SECRET = "dbviwuwfwefeedc"
+const SECRET = "dbviwuwfwefeedc";
+
+function authMiddeleWare(){
+    
+}
