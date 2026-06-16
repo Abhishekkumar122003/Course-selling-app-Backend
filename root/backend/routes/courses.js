@@ -1,6 +1,7 @@
 const {userModel , adminModel , courseModel , purcheseModel} = require("../Model");
 const { Router }= require('express')
 
+// const { courseModel } = require("../Model")
 const courseRouter = Router()
 
     

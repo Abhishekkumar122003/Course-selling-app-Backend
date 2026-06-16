@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const {userModel , adminModel , courseModel , purcheseModel} = require("../Model");
+const {userModel   , purchaseModel } = require("../Model");
 
 const userRouter = Router()
 
@@ -58,8 +58,8 @@ userRouter.post("/signin" , async (req, res)=>{
 
 })
 
-userRouter.get("/users/purches"  , (req , res)=>{
-
+userRouter.get("/purches"  , (req , res)=>{
+        res.send({message:"On working "})
 })
 
 
