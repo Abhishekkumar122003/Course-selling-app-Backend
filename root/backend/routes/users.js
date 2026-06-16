@@ -1,10 +1,10 @@
-const { Routers } = require('express')
+const { Router } = require('express')
 const {userModel , adminModel , courseModel , purcheseModel} = require("../Model");
 
-const userRouter = Routers()
-const courseRouter = Routers()
+const userRouter = Router()
+
     
-app.post("/user/signup" , async(req, res)=>{
+userRouter.post("/signup" , async(req, res)=>{
     const firstName = req.body.firstName;
     const email = req.body.email
     const lastName = req.body.lastName;
@@ -33,7 +33,7 @@ console.log(firstName , lastName)
     }
 
 })
-app.post("/user/signin" , async (req, res)=>{
+userRouter.post("/signin" , async (req, res)=>{
     const email= req.body.email
     const password = req.body.password;
     
@@ -58,7 +58,7 @@ app.post("/user/signin" , async (req, res)=>{
 
 })
 
-app.get("/users/purches"  , (req , res)=>{
+userRouter.get("/users/purches"  , (req , res)=>{
 
 })
 

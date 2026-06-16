@@ -1,13 +1,17 @@
 const {userModel , adminModel , courseModel , purcheseModel} = require("../Model");
-const { Routers }= require('express')
+const { Router }= require('express')
 
-const courseRouter = Routers()
+const courseRouter = Router()
 
     
-courseRouter.post("/course/purchase" , (req, res)=>{});
-courseRouter.get("/course/preview" , (req, res)=>{
+courseRouter.post("/purchase" , (req, res)=>{
+    res.send({
+        message:"you don't purches and courses yet"
+    })
+});
+courseRouter.get("/preview" , (req, res)=>{
     res.json({
-        message:"trying to implement the express Routes"
+        message:"we don't have any courses to sell yet"
     })
 });
 
