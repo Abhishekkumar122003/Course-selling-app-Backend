@@ -3,14 +3,15 @@ const json = require("jsonwebtoken");
 const app = express();
 
 const {userModel , adminModel , courseModel , purcheseModel} = require("./Model");
-const { createUserRoutes } = require('./users');
-const { createCourseRoutes } = require('./courses');
+const {  userRouter } = require('./routes/users');
+const { courseRouter } = require('./routes/courses');
 
 const SECRET = "sdnvvj3v";
 app.use(express.json());
 
+app.use("/users" , userRouter);
+app.use("/course" , courseRouter)
 app.get("/" , (req, res)=>{});
-createUserRoutes(app)
-createCourseRoutes(app)
+
 
 app.listen(3001);
