@@ -7,18 +7,21 @@ app.post("/users/signup" , async(req, res)=>{
     const firstName = req.body.firstName;
     const email = req.body.email
     const lastName = req.body.lastName;
-    const Password = req.body.Password;
-
+    const password = req.body.password;
+console.log(firstName , lastName)
     const userExists = await userModel.findOne({
        email:email
     })
-    if(userExists){
+    console.log(email); 
+    console.log(userExists);
+    if(!userExists){
         const newuser = await userModel.create({
             email:email,
             firstName:firstName,
             lastName:lastName,
-            password:Password
+            password:password
         })
+
         res.send({
             response:"you are signuped. "
         })
@@ -31,7 +34,7 @@ app.post("/users/signup" , async(req, res)=>{
 })
 app.post("/users/signin" , async (req, res)=>{
     const email= req.body.email
-    const password = req.body.Password;
+    const password = req.body.password;
     
     const userExists = await userModel.findOne({
         email:email,
