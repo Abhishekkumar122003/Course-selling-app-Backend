@@ -1,3 +1,4 @@
+const { response } = require("express");
 const {userModel , adminModel , courseModel , purcheseModel} = require("./Model");
 
 function createUserRoutes(app){
@@ -11,12 +12,15 @@ app.post("/users/signup" , async(req, res)=>{
     const userExists = await userModel.findOne({
        email:email
     })
-    if(!userExists){
+    if(userExists){
         const newuser = await userModel.create({
             email:email,
             firstName:firstName,
             lastName:lastName,
             password:Password
+        })
+        res.send({
+            response:"you are signuped. "
         })
     }else{
         res.status(411).json({
