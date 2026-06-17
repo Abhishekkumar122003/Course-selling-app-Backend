@@ -1,5 +1,7 @@
 const { Router } = require('express')
 const {userModel   , purchaseModel } = require("../Model");
+const json = require("jsonwebtoken");
+const SECRET = "sdnvvj3v";
 
 const userRouter = Router()
 

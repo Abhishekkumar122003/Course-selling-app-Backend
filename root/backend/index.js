@@ -1,17 +1,22 @@
 const express = require('express');
-const json = require("jsonwebtoken");
+const mongoose  = require('mongoose');
+
 const app = express();
+app.use(express.json());
 
 const {userModel , adminModel , courseModel , purcheseModel} = require("./Model");
 const {  userRouter } = require('./routes/users');
 const { courseRouter } = require('./routes/courses');
 const { adminRouter } = require("./routes/admin")
-const SECRET = "sdnvvj3v";
-app.use(express.json());
 
 app.use("/api/v1/users" , userRouter);
 app.use("/api/v1/course" , courseRouter)
 app.get("/" , (req, res)=>{});
 
+async function main(){
+
+  await mongoose.connect("mongodb+srv://abhishek801503gupta:mongooseBD@cluster0.ml6dk8w.mongodb.net/CourseSelling_Backend")
 
 app.listen(3001);
+
+}
