@@ -17,6 +17,6 @@ adminRouter.post("/signup" , (req, res)=>{
         email:email
     })
 })
-module.export={
+module.exports={
     adminRouter:adminRouter
 }
