@@ -40,12 +40,13 @@ adminRouter.post("/signup" ,async  (req, res)=>{
 
 adminRouter.post("/signin" , async (req, res)=> {
     const {firstName , lastName, email, password} = req.body;
-    console.log(firstName, lastName, email , password);
+    // console.log(firstName, lastName, email , password);
     const userExists = await adminModel.findOne({
         email:email,
         passwird:password
     })
-    
+    console.log(userExists)
+
     if(userExists){
          const token = json.sign({
             id:userExists._id
