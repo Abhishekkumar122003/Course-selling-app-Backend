@@ -27,11 +27,12 @@ adminRouter.post("/signup" ,async  (req, res)=>{
                 lastName:lastName,
                 password:password
             })
+            
+        }catch(err){
+            console.log("Some error happend during Admin signup" +"\n" + err)
             res.send({
                 message: "The ADMIN with given Creadential CREATED. "
             })
-        }catch(err){
-            console.log("Some error happend during Admin signup" +"\n" + err)
         }
     }
 
@@ -43,7 +44,7 @@ adminRouter.post("/signin" , async (req, res)=> {
     // console.log(firstName, lastName, email , password);
     const userExists = await adminModel.findOne({
         email:email,
-        passwird:password
+        password:password
     })
     console.log(userExists)
 
