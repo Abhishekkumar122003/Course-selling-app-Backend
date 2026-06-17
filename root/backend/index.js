@@ -15,7 +15,7 @@ app.use("/api/v1/admin" , adminRouter);
 
 async function main(){
 
-  await mongoose.connect()
+  await mongoose.connect("")
 
 app.listen(3001);
 

@@ -32,7 +32,7 @@ adminRouter.post("/signup" ,async  (req, res)=>{
             console.log("Some error happend during Admin signup" +"\n" + err)
             res.send({
                 message: "The ADMIN with given Creadential CREATED. "
-            })
+            });
         }
     }
 
@@ -60,6 +60,9 @@ adminRouter.post("/signin" , async (req, res)=> {
             message:"Either the Admin is not exists or the input creadential is not correct."
         })
     }
+})
+adminRouter.post("/courses", async (req, res) => { 
+    
 })
 module.exports={
     adminRouter:adminRouter
