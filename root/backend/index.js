@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 console.log(process.env.MOGO_URL)
 const mongoose  = require('mongoose');
 
@@ -21,4 +22,4 @@ async function main(){
 app.listen(3001);
 
 }
-// main()
+main()
