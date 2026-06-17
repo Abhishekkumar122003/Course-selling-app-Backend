@@ -20,3 +20,4 @@ async function main(){
 app.listen(3001);
 
 }
+main()

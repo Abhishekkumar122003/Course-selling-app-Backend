@@ -5,4 +5,6 @@ const SECRET = "sdnvvj3v";
 
 const { adminModel , courseModel } = require("../Model")
 
-adminRouter.post("/admin")
+
+
+adminRouter.post("/admin" , (req, res)=>{})
