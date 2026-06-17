@@ -1,4 +1,4 @@
-const {userModel , adminModel , courseModel , purcheseModel} = require("../Model");
+const {userModel , adminModel , courseModel , purchaseModel} = require("../Model");
 const { Router }= require('express')
 
 // const { courseModel } = require("../Model")
