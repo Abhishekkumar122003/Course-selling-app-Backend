@@ -37,6 +37,28 @@ adminRouter.post("/signup" ,async  (req, res)=>{
 
 
 })
+
+adminRouter.post("/signin" , async (req, res)=> {
+    const {firstName , lastName, email, password} = req.body;
+    console.log(firstName, lastName, email , password);
+    const userExists = await adminModel.findOne({
+        email:email,
+        passwird:password
+    })
+    
+    if(userExists){
+         const token = json.sign({
+            id:userExists._id
+        } , SECRET)
+        res.json({
+            token:token
+        })
+    } else{
+       res.status(403).json({
+            message:"Either the Admin is not exists or the input creadential is not correct."
+        })
+    }
+})
 module.exports={
     adminRouter:adminRouter
 }
