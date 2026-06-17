@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const adminRouter = Router()
 const json = require("jsonwebtoken");
-const SECRET = "sdnvvj3v";
+const SECRET = process.env.example;
 
 const { adminModel , courseModel } = require("../Model")
 

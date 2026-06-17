@@ -1,4 +1,5 @@
 const express = require('express');
+console.log(process.env.MOGO_URL)
 const mongoose  = require('mongoose');
 
 const app = express();
@@ -15,9 +16,9 @@ app.use("/api/v1/admin" , adminRouter);
 
 async function main(){
 
-  await mongoose.connect("")
+  await mongoose.connect("mongodb+srv://abhishek801503gupta:mongooseBD@cluster0.ml6dk8w.mongodb.net/CourseSelling_Backend")
 
 app.listen(3001);
 
 }
-main()
+// main()
