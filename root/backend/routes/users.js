@@ -8,7 +8,7 @@ const userRouter = Router()
     
 userRouter.post("/signup" , async(req, res)=>{
     const firstName = req.body.firstName;
-    const email = req.body.email
+    const email = req.body.email;
     const lastName = req.body.lastName;
     const password = req.body.password;
 console.log(firstName , lastName)

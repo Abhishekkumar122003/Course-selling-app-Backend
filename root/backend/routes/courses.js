@@ -6,7 +6,7 @@ const courseRouter = Router()
 
     
 courseRouter.post("/purchase" , (req, res)=>{
-    res.send({
+    res.send({ 
         message:"you don't purches and courses yet"
     })
 });

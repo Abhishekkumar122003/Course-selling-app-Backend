@@ -19,7 +19,7 @@ app.use("/api/v1/admin" , adminRouter);
 async function main(){
 
   await mongoose.connect(process.env.MOGO_URL)
-
+ 
 app.listen(3001);
 
 }
