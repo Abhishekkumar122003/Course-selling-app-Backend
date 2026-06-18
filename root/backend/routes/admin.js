@@ -4,7 +4,8 @@ const json = require("jsonwebtoken");
  require('dotenv').config()
 const SECRET =process.env.ADMIN_JWT_PASSWORD
 // console.log(SECRET);
-const { adminModel , courseModel } = require("../Model")
+const { adminModel , courseModel } = require("../Model");
+const { adminMiddleware } = require('../middelware/admin');
 
 
 
@@ -47,7 +48,7 @@ adminRouter.post("/signin" , async (req, res)=> {
         email:email,
         password:password
     })
-    console.log(userExists)
+    // console.log(userExists)
 
     if(userExists){
          const token = json.sign({
@@ -62,8 +63,11 @@ adminRouter.post("/signin" , async (req, res)=> {
         })
     }
 })
-adminRouter.post("/courses", async (req, res) => { 
+adminRouter.post("/courses",adminMiddleware, async (req, res) => { 
     
+})
+adminRouter.put("/course" , adminMiddleware , (req, res)=>{
+
 })
 module.exports={
     adminRouter:adminRouter
