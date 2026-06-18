@@ -64,10 +64,34 @@ adminRouter.post("/signin" , async (req, res)=> {
     }
 })
 adminRouter.post("/courses",adminMiddleware, async (req, res) => { 
-    
+      const createrId = req.adminId;
+      const { tittle , description , price , imageUrl } = req.body;
+
+     try{ const courseDetails = await courseModel.create({
+        tittle ,
+        description,
+        price,
+        createrId,
+        imageUrl
+      })
+      res.json({
+        response: courseDetails
+      })
+    }catch(err){
+        res.status(406).json({
+            message:err
+        })
+    }
 })
 adminRouter.put("/course" , adminMiddleware , (req, res)=>{
-
+        res.json({
+            message:"this end point is to make changes/update in his/her courses"
+        })
+})
+adminRouter.get("/course" , adminMiddleware , (req, res)=>{
+    res.json({
+        message:"this end point is to get all his/her courses"
+    })
 })
 module.exports={
     adminRouter:adminRouter
