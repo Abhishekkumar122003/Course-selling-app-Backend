@@ -1,6 +1,7 @@
 const express = require('express');
 require('dotenv').config();
-console.log(process.env.MOGO_URL)
+// console.log(process.env.MOGO_URL)
+// console.log("sasfsd")
 const mongoose  = require('mongoose');
 
 const app = express();
@@ -17,7 +18,7 @@ app.use("/api/v1/admin" , adminRouter);
 
 async function main(){
 
-  await mongoose.connect("mongodb+srv://abhishek801503gupta:mongooseBD@cluster0.ml6dk8w.mongodb.net/CourseSelling_Backend")
+  await mongoose.connect(process.env.MOGO_URL)
 
 app.listen(3001);
 
