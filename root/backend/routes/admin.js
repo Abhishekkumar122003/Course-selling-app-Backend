@@ -1,9 +1,9 @@
 const { Router } = require('express');
 const adminRouter = Router()
 const json = require("jsonwebtoken");
- 
-const SECRET = require('../config');
-console.log(SECRET);
+ require('dotenv').config()
+const SECRET =process.env.ADMIN_JWT_PASSWORD
+// console.log(SECRET);
 const { adminModel , courseModel } = require("../Model")
 
 
