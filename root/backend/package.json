@@ -4,7 +4,7 @@
   "description": "Making the Backend of the Course Selling App",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
