@@ -6,7 +6,7 @@ const mongoose  = require('mongoose');
 const connection = process.env.MOGO_URL;
 const app = express();
 app.use(express.json());
-// console.log(connection)
+console.log(connection)
 
 const {userModel , adminModel , courseModel , purcheseModel} = require("./Model");
 const {  userRouter } = require('./routes/users');
@@ -18,10 +18,12 @@ app.use("/api/v1/course" , courseRouter)
 app.use("/api/v1/admin" , adminRouter);
 
 async function main(){
-
+try{
   await mongoose.connect(connection)
  
-app.listen(3001);
-
+  app.listen(3000);
+}catch(err){
+  console.log(err);
+}
 }
 main()

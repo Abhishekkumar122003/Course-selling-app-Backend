@@ -7,8 +7,8 @@ const userRouter = Router()
 
     
 userRouter.post("/signup" , async(req, res)=>{
-    const {firstNaame , lastName, email, password} = req.body;
-// console.log(firstName , lastName)
+    const {firstName , lastName, email, password} = req.body;
+console.log(firstName , lastName )  
 
 // try to add zod validation
 // put this inside  try catch block
