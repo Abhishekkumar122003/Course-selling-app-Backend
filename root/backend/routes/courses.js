@@ -21,7 +21,10 @@ courseRouter.post("/purchase" ,UserMiddleware ,async (req, res)=>{
     })
 });
 courseRouter.get("/preview" , async (req, res)=>{
-    const course = await 
+    const courses = await courseModel.find({});
+    res.json({
+        courses
+    })
 });
 
 module.exports= {
