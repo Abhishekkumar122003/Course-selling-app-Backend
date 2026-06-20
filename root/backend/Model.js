@@ -10,7 +10,7 @@ const userSchema = new Schema({
     lastName:String,
     password:String
 })
-
+ 
 
 
 const adminSchema = new Schema({

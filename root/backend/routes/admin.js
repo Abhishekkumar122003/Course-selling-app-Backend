@@ -76,7 +76,8 @@ adminRouter.post("/courses",adminMiddleware, async (req, res) => {
         imageUrl
       })
       res.json({
-        response: courseDetails
+        message: "course created",
+        response: courseDetails._id
       })
     }catch(err){
         res.status(406).json({
@@ -84,17 +85,32 @@ adminRouter.post("/courses",adminMiddleware, async (req, res) => {
         })
     }
 })
-adminRouter.put("/course" , adminMiddleware , (req, res)=>{
+adminRouter.put("/course" ,adminMiddleware , (req, res)=>{
+    const createrId = req.adminId
+    const { tittle, description, price , imageUrl } = req.body;
+
+    try{ const updatedCourse = await courseModel.updateOne({
+    title,
+        price,
+        description,
+        imageUrl,
+        createrId
+    })
         res.json({
-            message:"this end point is to make changes/update in his/her courses"
-        })
+            message:"Course updated",
+            response:updatedCourse.acknowledged._id
+        })}catch(err){
+            console.dir(err);
+        }
 })
-adminRouter.get("/course" , adminMiddleware , (req, res)=>{
+adminRouter.get("/course" , adminMiddleware ,async (req, res)=>{
+    const CreaterId = req.adminId;
+    const AdminCourses = await 
     res.json({
         message:"this end point is to get all his/her courses"
     })
 })
-
+ 
 module.exports={
     adminRouter:adminRouter
 }
