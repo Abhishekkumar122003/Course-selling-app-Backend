@@ -61,17 +61,21 @@ userRouter.post("/signin" , async (req, res)=>{
 
 })
 
-userRouter.get("/purches"  , UserMiddleware , (req , res)=>{
-    const userId = req.userId
+userRouter.get("/purches"  , UserMiddleware , async (req , res)=>{
+    const userId = req.userId;
+    const courseId = req.body.courseId;
     const purchaseCourse = await purchaseModel.find({
         ownerId:userId
     })
     if(purchaseCourse){
         const CourseData = await purchaseModel.find({
-            _id: 
+            _id: {$in: purchaseCourse.map(x => x._id == courseId)}
         })
     }
-        res.send({message:"On working "})
+        res.json({
+            purchaseCourse,
+            CourseData
+        })
 })
 
 
