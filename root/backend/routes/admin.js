@@ -11,7 +11,7 @@ const { adminMiddleware } = require('../middelware/admin');
 
 adminRouter.post("/signup" ,async  (req, res)=>{
     const { firstName , lastName, password , email  } = req.body;
-    
+    // try to add thr zod validation
     const userExist = await adminModel.findOne({
         email:email,
         firstName:firstName,
@@ -44,6 +44,7 @@ adminRouter.post("/signup" ,async  (req, res)=>{
 adminRouter.post("/signin" , async (req, res)=> {
     const {firstName , lastName, email, password} = req.body;
     // console.log(firstName, lastName, email , password);
+
     const userExists = await adminModel.findOne({
         email:email,
         password:password
