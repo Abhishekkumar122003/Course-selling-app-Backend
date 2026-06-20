@@ -30,7 +30,7 @@ const courseSchema = new Schema({
 
 const purchaseSchema = new Schema({
     ownerId:ObjectId,
-    courseId:[ObjectId]
+    courseId:ObjectId
 })
 
 const userModel = mongoose.model("users" , userSchema);
