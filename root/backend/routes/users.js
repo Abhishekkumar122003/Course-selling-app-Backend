@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const {userModel   , purchaseModel } = require("../Model");
 const json = require("jsonwebtoken");
+const { UserMiddleware } = require('../middelware/user');
 const SECRET = process.env.example;
 
 const userRouter = Router()
@@ -60,7 +61,16 @@ userRouter.post("/signin" , async (req, res)=>{
 
 })
 
-userRouter.get("/purches"  , (req , res)=>{
+userRouter.get("/purches"  , UserMiddleware , (req , res)=>{
+    const userId = req.userId
+    const purchaseCourse = await purchaseModel.find({
+        ownerId:userId
+    })
+    if(purchaseCourse){
+        const CourseData = await purchaseModel.find({
+            _id: 
+        })
+    }
         res.send({message:"On working "})
 })
 

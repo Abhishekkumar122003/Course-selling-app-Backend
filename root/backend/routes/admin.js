@@ -85,7 +85,7 @@ adminRouter.post("/courses",adminMiddleware, async (req, res) => {
         })
     }
 })
-adminRouter.put("/course" ,adminMiddleware , async (req, res)=>{
+adminRouter.put("/course" ,adminMiddleware , async (req, res)=>{  // for admin to make update in his/her courses
     const createrId = req.adminId
     const { tittle, description, price , imageUrl } = req.body;
 
@@ -106,7 +106,7 @@ adminRouter.put("/course" ,adminMiddleware , async (req, res)=>{
             console.dir(err);
         }
 })
-adminRouter.get("/course" , adminMiddleware ,async (req, res)=>{
+adminRouter.get("/course" , adminMiddleware ,async (req, res)=>{ // for admin to get all his/her courses
     const CreaterId = req.adminId;
     try {
         const AdminCourses = await courseModel.find({
