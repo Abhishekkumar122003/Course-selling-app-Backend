@@ -94,6 +94,7 @@ adminRouter.get("/course" , adminMiddleware , (req, res)=>{
         message:"this end point is to get all his/her courses"
     })
 })
+
 module.exports={
     adminRouter:adminRouter
 }
